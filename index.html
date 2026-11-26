@@ -1,21 +1,131 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My DevOps Project</title>
-    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My DevOps Website</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f4f7fb;
+            color: #333;
+        }
+
+        header {
+            background: #0078d4;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background: #242424;
+            padding: 12px;
+            text-align: center;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .container h2 {
+            margin-bottom: 20px;
+        }
+
+        .cards {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: white;
+            width: 280px;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            color: #0078d4;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background: #242424;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 50px;
+        }
+    </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>Azure DevOps Pipeline Working!</h1>
+<header>
+    <h1>My DevOps Website</h1>
+    <p>Sample website deployed using Azure DevOps</p>
+</header>
 
-        <p>This website was processed using my custom DevOps agent.</p>
+<nav>
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+</nav>
 
-        <p>My first DevOps project.</p>
-<h1>This is my first prject </h1>
-        
+<div class="container">
+
+    <h2>Welcome to My Website</h2>
+
+    <p>
+        This is a sample HTML website created for testing
+        Azure DevOps CI/CD pipelines.
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Azure DevOps</h3>
+            <p>Build and deploy applications automatically using pipelines.</p>
+        </div>
+
+        <div class="card">
+            <h3>Custom Agent</h3>
+            <p>This website can be deployed using a self-hosted Azure DevOps agent.</p>
+        </div>
+
+        <div class="card">
+            <h3>Automation</h3>
+            <p>Every GitHub update can automatically trigger your deployment pipeline.</p>
+        </div>
+
     </div>
+
+</div>
+
+<footer>
+    <p>© 2026 My DevOps Project</p>
+</footer>
 
 </body>
 </html>
