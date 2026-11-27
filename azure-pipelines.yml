@@ -1,20 +1,29 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - main
 
 pool:
-  name: 'Mycustomagentpool'
-  vmImage: ubuntu-latest
+  name: Mycustomagentpool
 
 steps:
-- script: echo Hello, world!
-  displayName: 'Run a one-line script'
+
+- checkout: self
 
 - script: |
-    echo Add other tasks to build, test, and deploy your project.
-    echo See https://aka.ms/yaml
-  displayName: 'Run a multi-line script'
+    docker build -t mywebsite:latest .
+  displayName: 'Build Docker Image'
+
+- powershell: |
+    docker stop mywebsite-container 2>$null
+    docker rm mywebsite-container 2>$null
+
+    docker run -d `
+      --name mywebsite-container `
+      --restart unless-stopped `
+      -p 8080:80 `
+      mywebsite:latest
+  displayName: 'Deploy Docker Container'
+
+- powershell: |
+    docker ps
+    curl.exe http://localhost:8080
+  displayName: 'Verify Website'
