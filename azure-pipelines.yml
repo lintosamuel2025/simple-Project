@@ -9,7 +9,8 @@ steps:
 - checkout: self
 
 - script: |
-    docker build -t mywebsite:latest .
+    "C:\Users\Administrator\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe" --version
+    "C:\Users\Administrator\AppData\Local\Programs\DockerDesktop\resources\bin\docker.exe" build -t mywebsite:latest .
   displayName: 'Build Docker Image'
 
 - powershell: |
